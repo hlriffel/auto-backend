@@ -2,32 +2,35 @@ package br.edu.senac.auto.domain;
 
 import org.hibernate.validator.constraints.Length;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "USUARIO")
 public class User {
 
     @Id
+    @Column(name = "COD_ID")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @NotNull
+    @Column(name = "DES_EMAIL")
     @Length(max = 80)
     private String email;
 
     @NotNull
+    @Column(name = "NOM_USUARIO")
     @Length(max = 200)
     private String name;
 
+    @Column(name = "DES_CPF")
     @Length(max = 14)
     private String cpf;
 
     @NotNull
+    @Column(name = "IND_ADMIN")
     @Length(max = 1)
     private String admin;
 
