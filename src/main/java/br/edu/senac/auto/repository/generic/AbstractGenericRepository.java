@@ -4,7 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
-public abstract class AbstractGenericRepository<T> implements IGenericRepository<T> {
+public abstract class AbstractGenericRepository<T> {
 
     private Class<T> clazz;
 

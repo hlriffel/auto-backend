@@ -1,7 +1,7 @@
 package br.edu.senac.auto.controller;
 
 import br.edu.senac.auto.domain.User;
-import br.edu.senac.auto.repository.generic.AbstractGenericRepository;
+import br.edu.senac.auto.repository.generic.IGenericRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,10 +14,10 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
 
-    AbstractGenericRepository<User> repository;
+    IGenericRepository<User> repository;
 
     @Autowired
-    public void setRepository(AbstractGenericRepository<User> repository) {
+    public void setRepository(IGenericRepository<User> repository) {
         this.repository = repository;
         this.repository.setClazz(User.class);
     }

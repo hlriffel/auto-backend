@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 @Scope(BeanDefinition.SCOPE_PROTOTYPE)
-public class GenericRepository<T> extends AbstractGenericRepository<T> {
+public class GenericRepository<T> extends AbstractGenericRepository<T> implements IGenericRepository<T> {
 
 }

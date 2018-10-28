@@ -4,6 +4,8 @@ import java.util.List;
 
 public interface IGenericRepository<T> {
 
+    void setClazz(Class<T> clazz);
+
     T findOne(Long id);
 
     List<T> findAll();
