@@ -1,7 +1,5 @@
 # auto-backend
 
-Deployed project URL: https://auto-backend.herokuapp.com/
-
 ## User endpoint
 
 ### URL
