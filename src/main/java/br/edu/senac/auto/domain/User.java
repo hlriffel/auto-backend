@@ -34,11 +34,8 @@ public class User {
     @Length(max = 1)
     private String admin;
 
-    public User(@NotNull String email, @NotNull String name, @NotNull String cpf, @NotNull String admin) {
-        this.email = email;
-        this.name = name;
-        this.cpf = cpf;
-        this.admin = admin;
+    public User() {
+
     }
 
     public Long getId() {
