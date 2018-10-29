@@ -11,7 +11,7 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
 
-    IGenericRepository<User> repository;
+    private IGenericRepository<User> repository;
 
     @Autowired
     public void setRepository(IGenericRepository<User> repository) {
