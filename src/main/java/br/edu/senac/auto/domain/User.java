@@ -31,8 +31,7 @@ public class User {
 
     @NotNull
     @Column(name = "IND_ADMIN")
-    @Length(max = 1)
-    private String admin;
+    private Boolean admin;
 
     public User() {
 
@@ -71,10 +70,10 @@ public class User {
     }
 
     public boolean isAdmin() {
-        return "S".equals(admin);
+        return admin;
     }
 
-    public void setAdmin(String admin) {
+    public void setAdmin(Boolean admin) {
         this.admin = admin;
     }
 }
