@@ -41,6 +41,7 @@ public abstract class AbstractGenericRepository<T> {
         entityManager.remove(entity);
     }
 
+    @Transactional
     public void deleteById(Long id) {
         T entity = findOne(id);
         delete(entity);
