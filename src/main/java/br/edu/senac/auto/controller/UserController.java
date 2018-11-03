@@ -27,8 +27,14 @@ public class UserController {
     }
 
     @PostMapping
-    public void addUser(@RequestBody User user) {
-        repository.add(user);
+    public ResponseEntity<User> saveUser(@RequestBody User user) {
+        if (user.getId() == null) {
+            repository.add(user);
+        } else {
+            repository.update(user);
+        }
+
+        return getUserByEmail(user.getEmail());
     }
 
     @GetMapping
@@ -45,10 +51,5 @@ public class UserController {
         }
 
         return ResponseEntity.notFound().build();
-    }
-
-    @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable Long id) {
-        repository.deleteById(id);
     }
 }
