@@ -52,7 +52,7 @@ public class UsuarioCategoriaController {
         return ResponseEntity.ok(categoriesList);
     }
 
-    @GetMapping
+    @GetMapping("/{userId}")
     public ResponseEntity<List<UsuarioCategoria>> getUserCategories(@PathVariable Long userId) {
         List<UsuarioCategoria> categories = specificRepository.getUserCategories(userId);
 
