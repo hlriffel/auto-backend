@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "USUARIO")
-public class User {
+public class Usuario {
 
     @Id
     @Column(name = "COD_ID")
@@ -33,7 +33,7 @@ public class User {
     @Column(name = "IND_ADMIN")
     private Boolean admin;
 
-    public User() {
+    public Usuario() {
 
     }
 

@@ -4,7 +4,7 @@
 
 ### URL
 
-https://auto-backend.herokuapp.com/user
+https://auto-backend.herokuapp.com/usuario
 
 ### Post content example
 

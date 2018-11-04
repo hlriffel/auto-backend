@@ -1,0 +1,50 @@
+localhost:8090/usuario
+
+POST
+
+{
+	"email": "henleoriffel@gmail.com",
+	"name": "Henrique Leonardo Riffel",
+	"cpf": "123.456.789-00",
+	"admin": true
+}
+
+localhost:8090/categoria
+
+{
+    "nome": "Motorista"
+}
+
+{
+    "nome": "Caminhoneiro (a)"
+}
+
+{
+    "nome": "Motociclista"
+}
+
+localhost:8090/usuario-categoria
+
+{
+	"usuario": {
+        "id": 1,
+        "email": "henleoriffel@gmail.com",
+        "name": "Henrique Leonardo Riffel",
+        "cpf": "123.456.789-00",
+        "admin": true
+    },
+	"categorias": [
+	    {
+	        "id": 1,
+	        "nome": "Motorista"
+	    },
+	    {
+	        "id": 2,
+	        "nome": "Caminhoneiro (a)"
+	    },
+	    {
+	        "id": 3,
+	        "nome": "Motociclista"
+	    }
+	]
+}
