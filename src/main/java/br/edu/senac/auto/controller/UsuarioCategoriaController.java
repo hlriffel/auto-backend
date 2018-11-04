@@ -56,10 +56,6 @@ public class UsuarioCategoriaController {
     public ResponseEntity<List<UsuarioCategoria>> getUserCategories(@PathVariable Long userId) {
         List<UsuarioCategoria> categories = specificRepository.getUserCategories(userId);
 
-        if (categories.isEmpty()) {
-            return ResponseEntity.notFound().build();
-        }
-
         return ResponseEntity.ok(categories);
     }
 
