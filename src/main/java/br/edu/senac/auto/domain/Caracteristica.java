@@ -41,8 +41,8 @@ public class Caracteristica {
         return nome;
     }
 
-    public void setNome(String caracteristica) {
-        this.nome = caracteristica;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getObservacao() {
