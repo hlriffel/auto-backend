@@ -25,7 +25,7 @@ public class CaracteristicaController {
     @PostMapping
     @Transactional
     public ResponseEntity<Caracteristica> saveCaracteristica(@RequestBody Caracteristica caracteristica) {
-        if (repository.getId() == null) {
+        if (caracteristica.getId() == null) {
             repository.add(caracteristica);
         } else {
             repository.update(caracteristica);
