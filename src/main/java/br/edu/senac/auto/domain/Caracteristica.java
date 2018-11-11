@@ -41,15 +41,15 @@ public class Caracteristica {
         return nome;
     }
 
-    public void setNome(String Caracteristica) {
-        this.nome = Caracteristica;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getObservacao() {
         return observacao;
     }
 
-    public void setObservacao(String Observacao) {
-        this.nome = Observacao;
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
     }
 }
