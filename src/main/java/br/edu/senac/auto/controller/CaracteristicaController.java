@@ -1,6 +1,8 @@
 package br.edu.senac.auto.controller;
 
 import br.edu.senac.auto.domain.Caracteristica;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
 import br.edu.senac.auto.repository.generic.IGenericRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -32,6 +34,12 @@ public class CaracteristicaController {
         }
 
         return ResponseEntity.ok(caracteristica);
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void deleteCaracteristica(@PathVariable("id") Long id) {
+        repository.deleteById(id);
     }
 
     @GetMapping
