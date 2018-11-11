@@ -13,6 +13,6 @@ https://auto-backend.herokuapp.com/usuario
 	"email": "test@test.com",
 	"name": "John Doe",
 	"cpf": "123.456.789-00",
-	"admin": "S"
+	"admin": true
 }
 ```
