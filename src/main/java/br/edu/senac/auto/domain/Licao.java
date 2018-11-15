@@ -1,6 +1,7 @@
 package br.edu.senac.auto.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "LICAO")
@@ -11,11 +12,17 @@ public class Licao {
     @Column(name = "COD_ID")
     private Long id;
 
+    @NotNull
+    @JoinColumn(name = "NOM_LICAO")
+    private String nome;
+
     @ManyToOne
+    @NotNull
     @JoinColumn(name = "COD_CATEGORIA")
     private Categoria categoria;
 
     @ManyToOne
+    @NotNull
     @JoinColumn(name = "COD_CARACTERISTICA")
     private Caracteristica caracteristica;
 
@@ -45,5 +52,13 @@ public class Licao {
 
     public void setCaracteristica(Caracteristica caracteristica) {
         this.caracteristica = caracteristica;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 }
