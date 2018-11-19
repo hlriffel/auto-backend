@@ -1,7 +1,8 @@
 package br.edu.senac.auto.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "USUARIO_CATEGORIA")
@@ -14,6 +15,7 @@ public class UsuarioCategoria {
 
     @OneToOne
     @JoinColumn(name = "COD_USUARIO")
+    @JsonIgnore
     private Usuario usuario;
 
     @OneToOne
