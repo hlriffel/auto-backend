@@ -13,4 +13,13 @@ public interface QuestionarioRepository extends JpaRepository<Questionario, Long
             " FROM Questionario q " +
             " WHERE q.categoria.id = ?1 ")
     List<PerguntaDto> getPerguntaDtos(Long categoriaId);
+
+    @Query("SELECT q FROM Questionario q WHERE q.categoria.id = ?1")
+    List<Questionario> getQuestionarioByCategoria(Long categoriaId);
+
+    @Query("SELECT q FROM Questionario q WHERE q.caracteristica.id = ?1")
+    List<Questionario> getQuestionarioByCaracteristica(Long caracteristicaId);
+
+    @Query("SELECT q FROM Questionario q WHERE q.categoria.id = ?1 AND q.caracteristica.id = ?2")
+    List<Questionario> getQuestionarioByCategoriaAndCaracteristica(Long categoriaId, Long caracteristicaId);
 }

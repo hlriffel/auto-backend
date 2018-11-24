@@ -60,20 +60,10 @@ public class ConteudoController {
 
     static class ConteudoCreationRequest {
 
-        private Licao licao;
         private List<Conteudo> addedContents;
         private List<Conteudo> removedContents;
 
         public ConteudoCreationRequest() {
-
-        }
-
-        public Licao getLicao() {
-            return licao;
-        }
-
-        public void setLicao(Licao licao) {
-            this.licao = licao;
         }
 
         public List<Conteudo> getAddedContents() {
