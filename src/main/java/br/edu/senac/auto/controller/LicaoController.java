@@ -73,7 +73,7 @@ public class LicaoController {
     }
     
     @GetMapping("/{categoriaId}/{caracteristicaId}")
-    public List<Licao> getRespostasByUsuario(@PathVariable Long categoriaId,@PathVariable Long caracteristicaId) {
+    public List<Licao> getLicaoCategoriaAndCaracteristica(@PathVariable Long categoriaId, @PathVariable Long caracteristicaId) {
         return repository.getLicaoCategoriaAndCaracteristica(categoriaId,caracteristicaId);
     }
 }
