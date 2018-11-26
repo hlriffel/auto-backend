@@ -12,7 +12,7 @@ import java.io.IOException;
 @Service
 public class S3Service {
 
-    @Autowired
+    @Autowired(required = false)
     private AmazonS3 s3Client;
 
     @Value("${jsa.s3.bucket}")

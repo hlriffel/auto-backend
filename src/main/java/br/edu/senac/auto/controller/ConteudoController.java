@@ -25,7 +25,7 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 public class ConteudoController {
 
-    @Autowired
+    @Autowired(required = false)
     private S3Service s3Service;
 
     private IGenericRepository<Conteudo> repository;
