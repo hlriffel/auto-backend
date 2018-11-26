@@ -71,4 +71,9 @@ public class LicaoController {
 
         return ResponseEntity.notFound().build();
     }
+    
+    @GetMapping("/{categoriaId}/{caracteristicaId}")
+    public List<Licao> getLicaoCategoriaAndCaracteristica(@PathVariable Long categoriaId, @PathVariable Long caracteristicaId) {
+        return repository.getLicaoCategoriaAndCaracteristica(categoriaId,caracteristicaId);
+    }
 }
