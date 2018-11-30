@@ -13,7 +13,7 @@ public class Questionario {
     private Long id;
 
     @NotNull
-    @JoinColumn(name = "NOM_PERGUNTA")
+    @Column(name = "NOM_PERGUNTA")
     private String nome;
 
     @ManyToOne
