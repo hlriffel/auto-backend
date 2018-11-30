@@ -1,8 +1,12 @@
 package br.edu.senac.auto.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "USUARIO_CATEGORIA")
@@ -21,6 +25,11 @@ public class UsuarioCategoria {
     @OneToOne
     @JoinColumn(name = "COD_CATEGORIA")
     private Categoria categoria;
+
+    @OneToMany(mappedBy = "usuarioCategoria")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
+    private List<Resposta> respostas;
 
     public UsuarioCategoria() {
 
@@ -48,5 +57,13 @@ public class UsuarioCategoria {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public List<Resposta> getRespostas() {
+        return respostas;
+    }
+
+    public void setRespostas(List<Resposta> respostas) {
+        this.respostas = respostas;
     }
 }

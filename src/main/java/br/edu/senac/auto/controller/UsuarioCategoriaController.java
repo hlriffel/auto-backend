@@ -12,22 +12,15 @@ import org.springframework.web.bind.annotation.*;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/usuario-categoria")
 @CrossOrigin(origins = "*")
 public class UsuarioCategoriaController {
 
-    private IGenericRepository<UsuarioCategoria> repository;
-
     @Autowired
-    private UsuarioCategoriaRepository specificRepository;
-
-    @Autowired
-    public void setRepository(IGenericRepository<UsuarioCategoria> repository) {
-        this.repository = repository;
-        this.repository.setClazz(UsuarioCategoria.class);
-    }
+    private UsuarioCategoriaRepository repository;
 
     @PostMapping
     @Transactional
@@ -36,17 +29,20 @@ public class UsuarioCategoriaController {
 
         Usuario usuario = creationRequest.getUsuario();
         List<Categoria> categorias = creationRequest.getCategorias();
+        List<Long> categoriaIds = categorias.stream().map(Categoria::getId).collect(Collectors.toList());
 
-        specificRepository.deleteByUsuario(usuario);
+        repository.deleteByUsuarioWithoutCategorias(usuario.getId(), categoriaIds);
 
         for (Categoria categoria : categorias) {
-            UsuarioCategoria usuarioCategoria = new UsuarioCategoria();
-            usuarioCategoria.setUsuario(usuario);
-            usuarioCategoria.setCategoria(categoria);
+            if (repository.getQtdeByUsuarioAndCategoria(usuario.getId(), categoria.getId()) == 0) {
+                UsuarioCategoria usuarioCategoria = new UsuarioCategoria();
+                usuarioCategoria.setUsuario(usuario);
+                usuarioCategoria.setCategoria(categoria);
 
-            repository.add(usuarioCategoria);
+                repository.save(usuarioCategoria);
 
-            categoriesList.add(usuarioCategoria);
+                categoriesList.add(usuarioCategoria);
+            }
         }
 
         return ResponseEntity.ok(categoriesList);
@@ -54,7 +50,7 @@ public class UsuarioCategoriaController {
 
     @GetMapping("/{userId}")
     public ResponseEntity<List<UsuarioCategoria>> getUserCategories(@PathVariable Long userId) {
-        List<UsuarioCategoria> categories = specificRepository.getUserCategories(userId);
+        List<UsuarioCategoria> categories = repository.getUserCategories(userId);
 
         return ResponseEntity.ok(categories);
     }

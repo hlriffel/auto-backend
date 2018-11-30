@@ -24,3 +24,5 @@ credentials.csv
 /dist/
 /nbdist/
 /.nb-gradle/
+
+src/main/resources/data.sql

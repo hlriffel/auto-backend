@@ -1,5 +1,8 @@
 package br.edu.senac.auto.domain;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
@@ -23,7 +26,8 @@ public class Resposta {
     @Temporal(value = TemporalType.TIMESTAMP)
     private Date datResposta = new Date();
 
-    @OneToMany(mappedBy = "resposta", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "resposta")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private List<RespostaQuestionario> respostas;
 
     public Resposta() {
