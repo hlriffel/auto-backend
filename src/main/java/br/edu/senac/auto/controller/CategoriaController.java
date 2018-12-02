@@ -10,7 +10,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
-@RequestMapping("/categoria")
+@RequestMapping("/rest/categoria")
 @CrossOrigin(origins = "*")
 public class CategoriaController {
 

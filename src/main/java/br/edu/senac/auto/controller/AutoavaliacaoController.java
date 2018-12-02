@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/autoavaliacao")
+@RequestMapping("/rest/autoavaliacao")
 @CrossOrigin(origins = "*")
 public class AutoavaliacaoController {
 
