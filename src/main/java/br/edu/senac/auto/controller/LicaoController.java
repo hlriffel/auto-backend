@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/licao")
+@RequestMapping("/rest/licao")
 @CrossOrigin(origins = "*")
 public class LicaoController {
 

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/resposta")
+@RequestMapping("/rest/resposta")
 @CrossOrigin(origins = "*")
 public class RespostaController {
 

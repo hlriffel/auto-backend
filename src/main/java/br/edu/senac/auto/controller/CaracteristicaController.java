@@ -12,7 +12,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
-@RequestMapping("/caracteristica")
+@RequestMapping("/rest/caracteristica")
 @CrossOrigin(origins = "*")
 public class CaracteristicaController {
 
